@@ -13,6 +13,6 @@ RUN apk update && \
     rm -rf /var/cache/apk/* 
 
 
-CMD [ "./alist" ]
+CMD [ "/app/alist" ]
 # ENTRYPOINT [ "./docker-entrypoint.sh" ]
 
