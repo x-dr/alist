@@ -9,7 +9,8 @@ RUN apk update && \
     tar -zxvf alist.tar.gz  && \
     mv alist-linux-amd64 alist && \
     chmod +x ./alist && \
-    rm -rf /var/cache/apk/*
+    chmod +x ./docker-entrypoint.sh && \
+    rm -rf /var/cache/apk/* 
 
 
 
