@@ -14,6 +14,6 @@ RUN apk update && \
 
 
 
-# CMD ./alist
-ENTRYPOINT [ "./docker-entrypoint.sh" ]
+CMD ./alist
+# ENTRYPOINT [ "./docker-entrypoint.sh" ]
 
