@@ -1,5 +1,8 @@
 FROM alpine:edge
 
+WORKDIR /app
+ADD . /app/
+
 RUN apk update && \
     apk add --no-cache ca-certificates  wget && \
     wget -O alist.tar.gz  https://github.com/Xhofe/alist/releases/download/v2.1.2/alist-linux-amd64.tar.gz  && \
@@ -8,8 +11,8 @@ RUN apk update && \
     chmod +x ./alist && \
     rm -rf /var/cache/apk/*
 
-WORKDIR /app
-ADD . /app/
+
 
 CMD ./alist
+# ENTRYPOINT [ "./docker-entrypoint.sh" ]
 
