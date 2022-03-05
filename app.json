@@ -1,0 +1,7 @@
+{
+    "name": "alistHeroku",
+    "description": "alist on heroku",
+    "website": "https://github.com/x-dr/alist",
+    "repository": "https://github.com/x-dr/alist",
+    "stack": "container"
+}
