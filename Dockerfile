@@ -1,18 +1,21 @@
-FROM alpine:edge
+FROM ubuntu:latest
 
 WORKDIR /app
 ADD . /app/
 
-RUN apk update && \
-    apk add --no-cache ca-certificates  wget && \
+RUN apt-get update && \
+    apt-get install -y wget && \
     wget -O alist.tar.gz  https://github.com/Xhofe/alist/releases/download/v2.1.2/alist-linux-amd64.tar.gz  && \
     tar -zxvf alist.tar.gz  && \
+    rm -rf alist.tar.gz && \
     mv alist-linux-amd64 alist && \
     chmod +x ./alist && \
-    chmod +x ./docker-entrypoint.sh && \
-    rm -rf /var/cache/apk/* 
+    rm -rf /var/lib/apt/lists/* 
 
 
-CMD [ "/app/alist" ]
+
+
+
+CMD [ "./alist" ]
 # ENTRYPOINT [ "./docker-entrypoint.sh" ]
 
